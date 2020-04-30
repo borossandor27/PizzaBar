@@ -1,0 +1,26 @@
+
+
+body {
+    background-color: #bee5eb;
+}
+
+.container {
+    background-color: #80bdff;
+    color: black;
+    padding: 0;
+}
+
+header {
+    padding: 25px;
+}
+footer{
+    padding: 25px;
+}
+#wrapper {
+    text-align: center;
+}
+
+#loginForm{
+    margin: 40px auto;
+    padding: 20px;
+}
