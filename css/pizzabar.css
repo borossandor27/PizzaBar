@@ -2,6 +2,7 @@
 
 body {
     background-color: #bee5eb;
+    font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
 .container {
@@ -15,6 +16,7 @@ header {
 }
 footer{
     padding: 25px;
+    text-align: center;
 }
 #wrapper {
     text-align: center;
@@ -22,5 +24,21 @@ footer{
 
 #loginForm{
     margin: 40px auto;
+    padding: 20px;
+}
+#tartalom {
+    padding: 20px;
+}
+
+#valasztott {
+    position: absolute;
+    z-index: 1000;
+    top: 15px;
+    left: 15px;
+    background-color: #d4d4d4;
+    border: 1px solid gray;
+    border-radius: 10px;
+    box-shadow: 7px 7px 3px grey;
+    margin: 20px;
     padding: 20px;
 }

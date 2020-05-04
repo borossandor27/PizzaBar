@@ -20,7 +20,7 @@ $menupont = filter_input(INPUT_GET, 'menu');
             <header>
                 <h1><img src="images/PizzaLogo.png" class="d-none d-md-inline" > Beregszászi Pizza bár</h1>
             </header>
-            <?php
+             <?php
                 require_once 'menu.php';
                 require_once 'tartalom.php';
             ?>

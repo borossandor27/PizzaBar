@@ -1,3 +1,4 @@
+<div id="tartalom">
 <?php
 switch ($menupont) {
     case 'vevo':
@@ -16,4 +17,5 @@ switch ($menupont) {
         require_once 'login.php';
         break;
 }
-
+?>
+</div>
