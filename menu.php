@@ -5,31 +5,31 @@
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
     
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-      <li class="nav-item active">
-          <a class="nav-link" href="index.php?menu=home">Kezdőlap</a>
-      </li>
-      <li class="nav-item">
-          <a class="nav-link" href="index.php?menu=vevo">Vevők</a>
+       
+      <li class="nav-item <?php echo $menupont == "vevo"?"active":"";?>">
+          <a class="nav-link<?php echo $_SESSION['login']?'" href="index.php?menu=vevo"':' disabled" tabindex="-1" aria-disabled="true"'; ?> >Vevők</a>
       </li>      
-      <li class="nav-item">
-          <a class="nav-link" href="index.php?menu=futar">Futár</a>
+      <li class="nav-item <?php echo $menupont == "futar"?"active":"";?>">
+          <a class="nav-link<?php echo $_SESSION['login']?'" href="index.php?menu=futar"':' disabled" tabindex="-1" aria-disabled="true"' ?> >Futár</a>
       </li>
-      <li class="nav-item">
-          <a class="nav-link" href="index.php?menu=rendelesek">Rendelések</a>
-      </li>   
+      <li class="nav-item <?php echo $menupont == "rendelesek"?"active":""; ?>">
+          <a class="nav-link<?php echo $_SESSION['login']?'" href="index.php?menu=rendelesek"':' disabled" tabindex="-1" aria-disabled="true"' ?> >Rendelések</a>
+      </li>  
       <?php
-      if(isset($_SESSION['login']) && $_SESSION['login']){
-          echo '<li class="nav-item">';
-          echo '<a class="nav-link" href="index.php?menu=kilepes">Kilépés</a>';
-          echo '</li> ';
+      if($_SESSION['login']){
+          ?>
+          <li class="nav-item <?php echo $menupont == "kilepes"?"active":""; ?>">
+              <a class="nav-link" href="index.php?menu=kilepes">Kilépés</a>
+          </li>
+          <?php
       }
       ?>
       
           
           
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-      </li>
+<!--      <li class="nav-item">
+        <a class="nav-link disabled" tabindex="-1" aria-disabled="true">Disabled</a>
+      </li>-->
     </ul>
   </div>
 </nav>

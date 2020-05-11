@@ -7,7 +7,7 @@ function check($var)
 
 if(filter_input(INPUT_POST, 'megrendeles', FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE)){
     $ids = array_keys(array_filter($_POST, "check")); //-- letárolja a rendelt pizzak azonosítóját
-
+    //-- kiiras az adatbázisba
 }
 
 
@@ -18,6 +18,7 @@ if(filter_input(INPUT_POST, 'megrendeles', FILTER_VALIDATE_BOOLEAN, FILTER_NULL_
         $('#valasztott').hide();
         
         $('input[type="checkbox"]').click(function(){
+            //-- Kigyűjtjük a jelölt checkbox-ok azonositoit -----
             var searchIDs = $('input:checked').map(function(){
                 return $(this).attr('id');
             });
@@ -40,18 +41,13 @@ if(filter_input(INPUT_POST, 'megrendeles', FILTER_VALIDATE_BOOLEAN, FILTER_NULL_
                 url: "ajax_process/getar_ajax.php",
                 cache: false,
                 success: function(data) { 
-                        console.log(data);
-//                        var string =Rendelések összege: '+data; 
+//                        console.log(data);
                         $("#valasztott").html(data); 
                     }
             });
         });
     });
 </script> 
-<?php
-//var_dump($_POST);
-//echo join(",", array('red','green','blue'));
-?>
 <form action="" method="post">
     <div style="text-align: right;">
         <div id="valasztott" class="col-3">
@@ -76,7 +72,12 @@ if(filter_input(INPUT_POST, 'megrendeles', FILTER_VALIDATE_BOOLEAN, FILTER_NULL_
                         echo '<tr>';
                         echo '<td><img src="images/'.$row['pimages'].'" height="80"></td>';
                         echo '<td>'.$row['pnev'].'</td>';
-                        echo '<td>'.$row['pleiras'].'</td>';
+                        $hozzavalok = explode(",", $row['pleiras']);
+                        echo '<td><ul>';
+                        foreach ($hozzavalok as $value) {
+                            echo '<li>'.$value.'</li>';
+                        }
+                        echo '</ul></td>';
                         echo '<td>'.$row['par'].'</td>';
                         echo '<td>';
                         echo '<div class="form-group form-check">';

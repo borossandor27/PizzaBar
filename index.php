@@ -2,7 +2,10 @@
 session_start();
 header('Content-Type: text/html; charset=utf-8');
 require_once './kapcsolat.php';
-$menupont = filter_input(INPUT_GET, 'menu');
+if(!isset($_SESSION['login'])){
+    $_SESSION['login'] = false; //-- ha nem létezik, akkor létrehozzuk
+}
+$menupont = filter_input(INPUT_GET, 'menu', FILTER_SANITIZE_STRING);
 ?>
 <!DOCTYPE html>
 <html>

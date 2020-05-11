@@ -47,7 +47,7 @@ if(filter_input(INPUT_POST, 'login', FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAI
 }
 ?>
 <div id="wrapper">
-    <div id="loginForm" class="col-3">
+    <div id="loginForm" class="col-md-4 col-sm-8">
         <p><?php echo $errMsg; ?></p>
         <form action="" method="post">
             <div class="form-group">
