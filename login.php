@@ -4,7 +4,6 @@ $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_FULL_SPECIAL_CH
 $password = filter_input(INPUT_POST, 'password');
 $futar = filter_input(INPUT_POST, 'futar', FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE);
 $errMsg ="";
-
 if(filter_input(INPUT_POST, 'login', FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE)){
     //-- rákatintott a belépés gombra -----------
     try {

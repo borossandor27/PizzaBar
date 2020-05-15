@@ -1,4 +1,4 @@
-<div id="tartalom">
+<section id="tartalom">
 <?php
 switch ($menupont) {
     case 'vevo':
@@ -18,4 +18,4 @@ switch ($menupont) {
         break;
 }
 ?>
-</div>
+</section>
